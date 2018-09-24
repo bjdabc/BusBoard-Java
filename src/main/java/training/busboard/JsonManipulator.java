@@ -18,7 +18,6 @@ public class JsonManipulator {
 		try {
 			content = readJSONToString(url);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -29,14 +28,13 @@ public class JsonManipulator {
 			a = (JSONObject) parser.parse(content.toString());
 			return a;
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return a;
 
 	}
 	
-	public static String readJSONToString(String url) throws IOException {
+	private static String readJSONToString(String url) throws IOException {
 
 		URL tfl_url = new URL(url);
 		HttpURLConnection con = (HttpURLConnection) tfl_url.openConnection();

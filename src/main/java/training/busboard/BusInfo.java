@@ -40,7 +40,7 @@ public class BusInfo {
 		}
 	}
 
-	public static void liveBusFeed(String stop) throws IOException {
+	private static void liveBusFeed(String stop) throws IOException {
 
 		String url = "https://transportapi.com/v3/uk/bus/stop/" + stop
 				+ "/live.json?app_id=83e1a79b&app_key=23f46e1c5f18a697a386f1800ca3740f&group=route&limit=5&nextbuses=yes";

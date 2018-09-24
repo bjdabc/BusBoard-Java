@@ -8,7 +8,6 @@ public class Main {
 		try {
 			UserInput.Input();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
