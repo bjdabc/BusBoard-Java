@@ -4,12 +4,28 @@
       layout:decorate="layout">
 <head>
     <title>Bus Information</title>
+    
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    
 </head>
 <body>
 <div layout:fragment="content" class="container body-content">
     <h2>Bus Information</h2>
     <div>
-        <p>You entered postcode <span th:text="${busInfo.postcode}"></span></p>
+        <p>You entered postcode: </p>
+        <script>setTimeout("location.reload(true);", 300000000000000000);</script>
+        
+        <div th:each="bus_stop: ${busInfo.postcode}">
+      		<div class="stop_name" th:text="${bus_stop.name}"></div>
+      		<div th:each="bus: ${bus_stop.list_of_buses}">
+      		<div class="bus">
+      			<div class="number" th:text="${bus.bus_number}"></div>
+      			<div class="time" th:text="${bus.time}"></div>
+      			<div class="destination" th:text="${bus.destination}"></div>
+      		</div>
+      		</div>
+		</div>
+       
     </div>
 </div>
 </body>
